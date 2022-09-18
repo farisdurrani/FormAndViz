@@ -93,13 +93,19 @@ const Results = (props) => {
         question={data[0].question1}
         description={data[0].description1}
         type={data[0].type1}
-        response={data.map((e) => e.response1)}
+        responses={data.map((e) => e.response1)}
       />
       <ResponseBoxData
         question={data[0].question2}
         description={data[0].description2}
         type={data[0].type2}
-        response={data.map((e) => e.response2)}
+        responses={data.map((e) => e.response2)}
+      />
+      <ResponseBoxData
+        question={data[0].question4}
+        description={data[0].description4}
+        type={data[0].type4}
+        responses={data.map((e) => e.response4)}
       />
     </div>
   );
