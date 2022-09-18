@@ -7,3 +7,4 @@ export { default as LongAns } from "./LongAns";
 export { default as EmailInput } from "./EmailInput";
 export { default as Range } from "./Range";
 export { default as Select } from "./Select";
+export { default as Spacer } from "./Spacer";

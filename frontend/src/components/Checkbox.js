@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form";
 const Checkbox = (props) => {
   const genId = useId();
   const {
-    entries = ["Yes", "No", "Other:"],
+    entries,
     response = new Set(),
     setResponse,
   } = props;

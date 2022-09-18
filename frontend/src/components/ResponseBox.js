@@ -14,20 +14,35 @@ import {
   EmailInput,
   Range,
   Select,
+  Spacer,
 } from "./index";
 
 const ResponseBox = (props) => {
-  const { question } = props;
+  const { question, type, description, entries = [] } = props;
   const [response, setResponse] = useState();
-  const [response2, setResponse2] = useState();
 
-  // console.log(response);
+  const queryMap = {
+    radio: <Radio entries={entries} setResponse={setResponse} />,
+    checkbox: (
+      <Checkbox
+        entries={entries}
+        response={response}
+        setResponse={setResponse}
+      />
+    ),
+    shortAns: <ShortAns setResponse={setResponse} />,
+    longAns: <LongAns setResponse={setResponse} />,
+    emailInput: <EmailInput setResponse={setResponse} />,
+    range: <Range entries={entries} setResponse={setResponse} />,
+    select: <Select entries={entries} setResponse={setResponse} />,
+  };
 
   return (
-    <div className="response-box p-3 mt-4">
-      <p className="question-title">{question}</p>
-      <Checkbox response={response} setResponse={setResponse} />
-      <Radio setResponse={setResponse2} />
+    <div className="response-box p-4 mt-4">
+      <p className="question-title mb-0">{question}</p>
+      <p className="question-description">{description}</p>
+      <Spacer className="mt-3" />
+      {queryMap[type]}
     </div>
   );
 };
