@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useId } from "react";
 import PropTypes from "prop-types";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ToggleButton from "react-bootstrap/ToggleButton";
-import Form from "react-bootstrap/Form";
 import {
   Radio,
   Checkbox,

@@ -8,3 +8,6 @@ export { default as EmailInput } from "./EmailInput";
 export { default as Range } from "./Range";
 export { default as Select } from "./Select";
 export { default as Spacer } from "./Spacer";
+
+export { default as ResponseBoxData } from "./ResponseBoxData";
+export { default as ShortAnsRes } from "./results/ShortAnsRes";

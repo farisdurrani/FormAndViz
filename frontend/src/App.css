@@ -26,6 +26,26 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
+/*	General
+/* -------------------------------------------------------------------------- */
+
+.response-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+.response-box .question-title {
+  font-size: large;
+}
+
+.response-box .question-description {
+  font-size: small;
+  color: gray;
+}
+
+/* -------------------------------------------------------------------------- */
 /*	Navbar
 /* -------------------------------------------------------------------------- */
 
@@ -43,22 +63,6 @@ body {
   margin-inline: auto;
 }
 
-#fill .response-box {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background-color: white;
-  width: 100%;
-}
-
-#fill .response-box .question-title {
-  font-size: large;
-}
-
-#fill .response-box .question-description {
-  font-size: small;
-  color: gray;
-}
-
 #fill .form-shortAns .error-msg {
   color: red;
   font-size: small;
@@ -72,3 +76,13 @@ body {
 /* -------------------------------------------------------------------------- */
 /*	Results
 /* -------------------------------------------------------------------------- */
+
+#results {
+  width: min(750px, 90%);
+  margin-inline: auto;
+}
+
+#results .shortAnsRes .response {
+  background-color: var(--tertiary);
+  border-radius: 10px;
+}
