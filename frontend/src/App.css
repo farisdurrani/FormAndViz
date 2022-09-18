@@ -59,6 +59,16 @@ body {
   color: gray;
 }
 
+#fill .form-shortAns .error-msg {
+  color: red;
+  font-size: small;
+}
+
+#fill .form-shortAns .invalid {
+  border: 1px solid red;
+  background-color: lightpink;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	Results
 /* -------------------------------------------------------------------------- */

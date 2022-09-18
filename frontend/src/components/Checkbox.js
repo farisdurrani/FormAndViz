@@ -15,19 +15,14 @@ const Checkbox = (props) => {
     setResponse,
   } = props;
 
-  console.log(response);
-
   const handleOnChange = (e) => {
     const entrySelected = e.target.id.substring(genId.length);
     const curSelectections = response;
 
     if (curSelectections.has(entrySelected)) {
       curSelectections.delete(entrySelected);
-      setOtherSelected(false);
     } else {
       curSelectections.add(entrySelected);
-      setCurrentOtherAns(entrySelected);
-      setOtherSelected(true);
     }
     setResponse(curSelectections);
   };
@@ -37,7 +32,7 @@ const Checkbox = (props) => {
   }
 
   return (
-    <Form.Group>
+    <Form.Group className="form-checkbox">
       {entries.map((e) => (
         <Form.Check
           key={genId + e}

@@ -11,7 +11,7 @@ const Select = (props) => {
   }
 
   return (
-    <Form.Group>
+    <Form.Group className="form-selection">
       <Form.Select
         aria-label="Selection"
         onChange={(e) => setResponse(e.target.value)}

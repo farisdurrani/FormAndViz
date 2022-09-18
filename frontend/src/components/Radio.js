@@ -44,7 +44,7 @@ const Radio = (props) => {
   }, [otherAns]);
 
   return (
-    <Form.Group>
+    <Form.Group className="form-radio">
       {entries.map((e) => (
         <Form.Check
           key={genId + e}

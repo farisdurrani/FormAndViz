@@ -10,8 +10,8 @@ import {
   Radio,
   Checkbox,
   ShortAns,
-  LongAns,
   EmailInput,
+  LongAns,
   Range,
   Select,
   Spacer,
@@ -25,6 +25,10 @@ const ResponseBox = (props) => {
     entries = [],
     response,
     setResponse,
+    validateFunction,
+    validateMsg,
+    setValidated,
+    validated,
   } = props;
 
   const queryMap = {
@@ -36,10 +40,18 @@ const ResponseBox = (props) => {
         setResponse={setResponse}
       />
     ),
-    shortAns: <ShortAns setResponse={setResponse} />,
+    shortAns: (
+      <ShortAns
+        setResponse={setResponse}
+        validateFunction={validateFunction}
+        validateMsg={validateMsg}
+        setValidated={setValidated}
+        validated={validated}
+      />
+    ),
     longAns: <LongAns setResponse={setResponse} />,
     emailInput: <EmailInput setResponse={setResponse} />,
-    range: <Range entries={entries} setResponse={setResponse} />,
+    range: <Range response={response} setResponse={setResponse} />,
     select: <Select entries={entries} setResponse={setResponse} />,
   };
 

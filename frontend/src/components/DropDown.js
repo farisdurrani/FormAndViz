@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
+import Form from "react-bootstrap/Form";
 
 const DropDown = (props) => {
   const { options, onChange, defaultValue, isMulti } = props;
 
   return (
-    <Select
-      options={options}
-      onChange={onChange}
-      styles={dropdownStyes}
-      defaultValue={defaultValue}
-      isMulti={isMulti}
-    />
+    <Form.Group className="form-select">
+      <Select
+        options={options}
+        onChange={onChange}
+        styles={dropdownStyes}
+        defaultValue={defaultValue}
+        isMulti={isMulti}
+      />
+    </Form.Group>
   );
 };
 
