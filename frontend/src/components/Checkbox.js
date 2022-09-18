@@ -14,9 +14,8 @@ const Checkbox = (props) => {
     response = new Set(),
     setResponse,
   } = props;
-  const [otherAns, setOtherAns] = useState();
-  const [currentOtherAns, setCurrentOtherAns] = useState();
-  const [otherSelected, setOtherSelected] = useState(false);
+
+  console.log(response);
 
   const handleOnChange = (e) => {
     const entrySelected = e.target.id.substring(genId.length);

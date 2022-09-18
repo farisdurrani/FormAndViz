@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId } from "react";
 import PropTypes from "prop-types";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -18,8 +18,14 @@ import {
 } from "./index";
 
 const ResponseBox = (props) => {
-  const { question, type, description, entries = [] } = props;
-  const [response, setResponse] = useState();
+  const {
+    question,
+    type,
+    description,
+    entries = [],
+    response,
+    setResponse,
+  } = props;
 
   const queryMap = {
     radio: <Radio entries={entries} setResponse={setResponse} />,

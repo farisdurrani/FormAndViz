@@ -38,19 +38,23 @@ body {
 /*	Fill
 /* -------------------------------------------------------------------------- */
 
-.response-box {
+#fill {
+  width: min(750px, 90%);
+  margin-inline: auto;
+}
+
+#fill .response-box {
   border: 1px solid var(--border);
   border-radius: 10px;
   background-color: white;
-  margin-inline: auto;
-  width: min(750px, 90%);
+  width: 100%;
 }
 
-.response-box .question-title {
+#fill .response-box .question-title {
   font-size: large;
 }
 
-.response-box .question-description {
+#fill .response-box .question-description {
   font-size: small;
   color: gray;
 }
