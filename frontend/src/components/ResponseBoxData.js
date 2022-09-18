@@ -4,6 +4,8 @@ import { FreeAnsRes, Spacer, RadioRes, NumberRes } from "./index";
 
 const ResponseBoxData = (props) => {
   const { question, type, responses } = props;
+  if (!question && !type) return null;
+
   const responseTypeMap = {
     shortAns: <FreeAnsRes responses={responses} />,
     longAns: <FreeAnsRes responses={responses} />,

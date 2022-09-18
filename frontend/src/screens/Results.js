@@ -87,32 +87,19 @@ const Results = (props) => {
     },
   ];
 
+  const numberOfQuestions = Object.keys(data[0]).length / 4;
+  const ZeroToN = Array.from(Array(numberOfQuestions).keys());
+
   return (
     <div id="results">
-      <ResponseBoxData
-        question={data[0].question1}
-        description={data[0].description1}
-        type={data[0].type1}
-        responses={data.map((e) => e.response1)}
-      />
-      <ResponseBoxData
-        question={data[0].question2}
-        description={data[0].description2}
-        type={data[0].type2}
-        responses={data.map((e) => e.response2)}
-      />
-      <ResponseBoxData
-        question={data[0].question3}
-        description={data[0].description3}
-        type={data[0].type3}
-        responses={data.map((e) => e.response3)}
-      />
-      <ResponseBoxData
-        question={data[0].question4}
-        description={data[0].description4}
-        type={data[0].type4}
-        responses={data.map((e) => e.response4)}
-      />
+      {ZeroToN.map((_, i) => (
+        <ResponseBoxData
+          key={i}
+          question={data[0][`question${i}`]}
+          type={data[0][`type${i}`]}
+          responses={data.map((e) => e[`response${i}`])}
+        />
+      ))}
     </div>
   );
 };

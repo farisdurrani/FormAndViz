@@ -65,7 +65,6 @@ const Fill = (props) => {
 
   const onSubmit = () => {
     questions.forEach((e) => {
-      console.log(e.responseState[0]);
       if (e.validatedState?.[0] === false) {
         toast.error("Please fix inputs");
         return;
