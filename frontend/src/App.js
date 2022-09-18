@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Fill, Results } from "./screens/index.js";
 import MainNavbar from "./navbar-footer/MainNavbar";
+import  "./firebase";
 
 function App() {
   return (
