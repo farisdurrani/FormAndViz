@@ -82,7 +82,7 @@ body {
   margin-inline: auto;
 }
 
-#results .shortAnsRes .response {
+#results .freeAnsRes .response {
   background-color: var(--tertiary);
   border-radius: 10px;
 }

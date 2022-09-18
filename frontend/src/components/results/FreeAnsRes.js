@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ShortAnsRes = (props) => {
+const FreeAnsRes = (props) => {
   const { response } = props;
   return (
-    <div className="shortAnsRes">
+    <div className="freeAnsRes">
       {response.map((e, i) => (
         <div className="response p-2 mb-1">
           <p className="mt-auto mb-auto" key={i}>{e}</p>
@@ -14,6 +14,6 @@ const ShortAnsRes = (props) => {
   );
 };
 
-ShortAnsRes.propTypes = {};
+FreeAnsRes.propTypes = {};
 
-export default ShortAnsRes;
+export default FreeAnsRes;

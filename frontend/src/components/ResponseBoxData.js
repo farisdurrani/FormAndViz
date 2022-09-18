@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useId } from "react";
 import PropTypes from "prop-types";
-import { ShortAnsRes, Spacer } from "./index";
+import { FreeAnsRes, Spacer } from "./index";
 
 const ResponseBoxData = (props) => {
-  const { question, type, description, response } = props;
+  const { question, type, response } = props;
 
   return (
     <div className="response-box p-4 mt-4">
@@ -12,7 +12,7 @@ const ResponseBoxData = (props) => {
         response.length > 1 ? "responses" : "response"
       }`}</p>
       <Spacer className="mt-3" />
-      <ShortAnsRes response={response} />
+      <FreeAnsRes response={response} />
     </div>
   );
 };
