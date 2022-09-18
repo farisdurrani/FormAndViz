@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId, useEffect } from "react";
 import PropTypes from "prop-types";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -8,16 +8,45 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import Form from "react-bootstrap/Form";
 
 const Checkbox = (props) => {
+  const genId = useId();
+  const {
+    entries = ["Yes", "No", "Other:"],
+    response = new Set(),
+    setResponse,
+  } = props;
+  const [otherAns, setOtherAns] = useState();
+  const [currentOtherAns, setCurrentOtherAns] = useState();
+  const [otherSelected, setOtherSelected] = useState(false);
+
+  const handleOnChange = (e) => {
+    const entrySelected = e.target.id.substring(genId.length);
+    const curSelectections = response;
+
+    if (curSelectections.has(entrySelected)) {
+      curSelectections.delete(entrySelected);
+      setOtherSelected(false);
+    } else {
+      curSelectections.add(entrySelected);
+      setCurrentOtherAns(entrySelected);
+      setOtherSelected(true);
+    }
+    setResponse(curSelectections);
+  };
+
+  if (entries.length !== new Set(entries).size) {
+    throw new Error("Duplicate entries into Checbox");
+  }
+
   return (
     <Form.Group>
-      {["Yes", "No"].map((e) => (
+      {entries.map((e) => (
         <Form.Check
-          key={e}
+          key={genId + e}
           type="checkbox"
-          name="group1"
-          id={e}
+          name={genId}
+          id={genId + e}
           label={e}
-          onChange={(e) => console.log(e.target)}
+          onChange={handleOnChange}
         />
       ))}
     </Form.Group>

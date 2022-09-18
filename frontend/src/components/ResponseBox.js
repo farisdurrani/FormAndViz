@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -17,12 +17,17 @@ import {
 } from "./index";
 
 const ResponseBox = (props) => {
+  const { question } = props;
+  const [response, setResponse] = useState();
+  const [response2, setResponse2] = useState();
+
+  // console.log(response);
+
   return (
-    <div className="response-box">
-      <p className="question-title">Can you attend?</p>
-      <Form>
-        <Checkbox />
-      </Form>
+    <div className="response-box p-3 mt-4">
+      <p className="question-title">{question}</p>
+      <Checkbox response={response} setResponse={setResponse} />
+      <Radio setResponse={setResponse2} />
     </div>
   );
 };

@@ -42,10 +42,12 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   background-color: white;
-  padding: 20px;
-  margin-top: 20px;
   margin-inline: auto;
   width: min(750px, 90%);
+}
+
+.response-box .question-title {
+  font-size: large;
 }
 
 /* -------------------------------------------------------------------------- */

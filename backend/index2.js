@@ -4,8 +4,6 @@ import restaurants from "./api/restaurants.route.js";
 
 const app = express();
 
-console.log(434);
-
 app.use(cors());
 app.use(express.json());
 
