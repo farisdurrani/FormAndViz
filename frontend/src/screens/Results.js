@@ -16,7 +16,7 @@ const Results = (props) => {
 
       question3: "Age",
       description3: null,
-      type3: "shortAns",
+      type3: "number",
       response3: 18,
 
       question4: "Can you attend?",
@@ -100,6 +100,12 @@ const Results = (props) => {
         description={data[0].description2}
         type={data[0].type2}
         responses={data.map((e) => e.response2)}
+      />
+      <ResponseBoxData
+        question={data[0].question3}
+        description={data[0].description3}
+        type={data[0].type3}
+        responses={data.map((e) => e.response3)}
       />
       <ResponseBoxData
         question={data[0].question4}

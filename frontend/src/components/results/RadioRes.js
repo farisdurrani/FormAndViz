@@ -5,14 +5,15 @@ import Plot from "react-plotly.js";
 const RadioRes = (props) => {
   const { responses } = props;
   const countResponses = {};
-  const values = [];
-  const labels = [];
 
   for (const res of responses) {
     countResponses[res] = (countResponses[res] || 0) + 1;
   }
+
+  const values = [];
+  const labels = [];
   for (const res in countResponses) {
-    values.push(countResponses[res] / responses.length);
+    values.push(countResponses[res]);
     labels.push(res);
   }
 
