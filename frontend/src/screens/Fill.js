@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import { ResponseBox } from "../components/index.js";
 import Form from "react-bootstrap/Form";
+import { toast } from "react-toastify";
 
 const Fill = (props) => {
   const questions = [
@@ -56,7 +57,7 @@ const Fill = (props) => {
       responseState: useState(),
     },
     {
-      question: "What is your level of excitedness for the event? (1-100)",
+      question: "What is your level of excitedness for the event? (0-100)",
       type: "range",
       responseState: useState(0),
     },
@@ -65,6 +66,10 @@ const Fill = (props) => {
   const onSubmit = () => {
     questions.forEach((e) => {
       console.log(e.responseState[0]);
+      if (e.validatedState?.[0] === false) {
+        toast.error("Please fix inputs");
+        return;
+      }
     });
   };
 
