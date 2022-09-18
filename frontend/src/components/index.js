@@ -13,3 +13,4 @@ export { default as ResponseBoxData } from "./ResponseBoxData";
 export { default as FreeAnsRes } from "./results/FreeAnsRes";
 export { default as RadioRes } from "./results/RadioRes";
 export { default as NumberRes } from "./results/NumberRes";
+export { default as CheckboxRes } from "./results/CheckboxRes";

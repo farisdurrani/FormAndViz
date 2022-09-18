@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useId } from "react";
 import PropTypes from "prop-types";
-import { FreeAnsRes, Spacer, RadioRes, NumberRes } from "./index";
+import { FreeAnsRes, Spacer, RadioRes, NumberRes, CheckboxRes } from "./index";
 
 const ResponseBoxData = (props) => {
   const { question, type, responses } = props;
@@ -10,7 +10,10 @@ const ResponseBoxData = (props) => {
     shortAns: <FreeAnsRes responses={responses} />,
     longAns: <FreeAnsRes responses={responses} />,
     radio: <RadioRes responses={responses} />,
+    select: <RadioRes responses={responses} />,
     number: <NumberRes responses={responses} />,
+    checkbox: <CheckboxRes responses={responses} />,
+    range: <NumberRes responses={responses} />,
   };
 
   return (
