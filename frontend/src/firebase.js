@@ -5,7 +5,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
 } from "firebase/auth";
 import { DEFAULT_FIRESTORE_COLLECTION } from "./constants";
 import { toast } from "react-toastify";
@@ -42,9 +41,11 @@ export const getAllResponses = async () => {
   const querySnapshot = await getDocs(
     collection(db, DEFAULT_FIRESTORE_COLLECTION)
   );
+  const queryResponse = [];
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+    queryResponse.push(doc.data());
   });
+  return queryResponse;
 };
 
 export const registerWithEmail = async (email, password) => {

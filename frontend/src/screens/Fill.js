@@ -71,11 +71,10 @@ const Fill = (props) => {
       }
 
       if (e.responseState[0] == undefined) {
-        console.log(e);
         toast.error("All fields required");
         return;
       }
-    };
+    }
 
     const finalDataToPush = {};
 
@@ -86,9 +85,6 @@ const Fill = (props) => {
       finalDataToPush[`response${i}`] = e.responseState[0];
       finalDataToPush[`entries${i}`] = e.entries || null;
     });
-
-    console.log(finalDataToPush);
-
     addToResponses(finalDataToPush);
   };
 
