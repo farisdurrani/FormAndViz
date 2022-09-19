@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ResponseBoxData } from "../components/index";
+import { getCurrentlySignedInUser, signOutUser } from "../firebase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Results = (props) => {
+  const auth = getAuth();
+  const [abort, setAbort] = useState(true);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAbort(false);
+      } else {
+        window.location.replace("/login");
+      }
+    });
+  }, []);
+
+  if (abort) {
+    return <>Loading...</>;
+  }
+
   const data = [
     {
       question1: "Name",

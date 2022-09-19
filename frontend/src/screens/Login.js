@@ -5,7 +5,11 @@ import Container from "react-bootstrap/Container";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import { EMAIL_REGEX } from "../constants";
-import { signInWithEmail, registerWithEmail } from "../firebase";
+import {
+  signInWithEmail,
+  registerWithEmail,
+  getCurrentlySignedInUser,
+} from "../firebase";
 
 const Login = (props) => {
   const [isNewRegister, setIsNewRegister] = useState(false);
@@ -38,11 +42,13 @@ const Login = (props) => {
       const user = await registerWithEmail(email, password);
       if (user) {
         toast.success(`Registration of ${user.email} successful`);
+        window.location.replace("/results");
       }
     } else {
       const user = await signInWithEmail(email, password);
       if (user) {
         toast.success(`Login with ${user.email} successful`);
+        window.location.replace("/results");
       }
     }
   };

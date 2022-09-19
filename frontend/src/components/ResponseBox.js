@@ -43,7 +43,6 @@ const ResponseBox = (props) => {
       />
     ),
     longAns: <LongAns setResponse={setResponse} />,
-    emailInput: <EmailInput setResponse={setResponse} />,
     range: <Range response={response} setResponse={setResponse} />,
     select: <Select entries={entries} setResponse={setResponse} />,
   };

@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { DEFAULT_FIRESTORE_COLLECTION } from "./constants";
 import { toast } from "react-toastify";
@@ -73,9 +74,14 @@ export const signInWithEmail = async (email, password) => {
 export const signOutUser = () => {
   signOut(auth)
     .then(() => {
-      console.log("Sign out successful");
+      toast.success("Sign out successful");
+      return true;
     })
     .catch((error) => {
-      console.error(error);
+      toast.error(`Error in signing out: ${JSON.stringify(error.code)}`);
     });
+};
+
+export const getCurrentlySignedInUser = () => {
+  return auth.currentUser?.email;
 };
