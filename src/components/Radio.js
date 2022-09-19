@@ -56,7 +56,7 @@ const Radio = (props) => {
   );
 };
 
-Radio.PropTypes = {
+Radio.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.string).isRequired,
   setResponse: PropTypes.func.isRequired,
 };

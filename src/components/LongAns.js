@@ -15,7 +15,7 @@ const LongAns = (props) => {
   );
 };
 
-LongAns.PropTypes = {
+LongAns.propTypes = {
   setResponse: PropTypes.func.isRequired,
 };
 

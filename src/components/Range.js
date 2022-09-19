@@ -15,7 +15,7 @@ const Range = (props) => {
   );
 };
 
-Range.PropTypes = {
+Range.propTypes = {
   response: PropTypes.number.isRequired,
   setResponse: PropTypes.func.isRequired,
 };

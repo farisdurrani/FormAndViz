@@ -6,7 +6,7 @@ const Spacer = (props) => {
   return <div className={className} style={{ height, width }} />;
 };
 
-Spacer.PropTypes = {
+Spacer.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   className: PropTypes.string,

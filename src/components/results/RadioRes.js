@@ -33,7 +33,7 @@ const RadioRes = (props) => {
   );
 };
 
-RadioRes.PropTypes = {
+RadioRes.propTypes = {
   responses: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

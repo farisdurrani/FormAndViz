@@ -67,7 +67,7 @@ const ResponseBox = (props) => {
   );
 };
 
-ResponseBox.PropTypes = {
+ResponseBox.propTypes = {
   setResponse: PropTypes.func.isRequired,
   exclude: PropTypes.object,
   validateFunction: PropTypes.func,
@@ -75,7 +75,7 @@ ResponseBox.PropTypes = {
   validated: PropTypes.bool,
   setValidated: PropTypes.func,
   question: PropTypes.string.isRequired,
-  type: PropTypes.type.isRequired,
+  type: PropTypes.string.isRequired,
   description: PropTypes.string,
   entries: PropTypes.arrayOf(PropTypes.string),
   response: PropTypes.oneOfType(

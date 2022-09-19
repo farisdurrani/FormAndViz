@@ -26,7 +26,7 @@ const NumberRes = (props) => {
   );
 };
 
-NumberRes.PropTypes = {
+NumberRes.propTypes = {
   responses: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 

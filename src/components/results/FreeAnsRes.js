@@ -14,7 +14,7 @@ const FreeAnsRes = (props) => {
   );
 };
 
-FreeAnsRes.PropTypes = {
+FreeAnsRes.propTypes = {
   responses: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

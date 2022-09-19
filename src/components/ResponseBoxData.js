@@ -28,7 +28,7 @@ const ResponseBoxData = (props) => {
   );
 };
 
-ResponseBoxData.PropTypes = {
+ResponseBoxData.propTypes = {
   question: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   responses: PropTypes.array.isRequired,

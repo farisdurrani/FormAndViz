@@ -46,7 +46,7 @@ const ShortAns = (props) => {
   );
 };
 
-ShortAns.PropTypes = {
+ShortAns.propTypes = {
   setResponse: PropTypes.func.isRequired,
   exclude: PropTypes.object,
   validateFunction: PropTypes.func,

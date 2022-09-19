@@ -51,7 +51,7 @@ const NumberAns = (props) => {
   );
 };
 
-NumberAns.PropTypes = {
+NumberAns.propTypes = {
   setResponse: PropTypes.func.isRequired,
   exclude: PropTypes.object,
   validateFunction: PropTypes.func,

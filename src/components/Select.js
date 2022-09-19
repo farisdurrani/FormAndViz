@@ -27,7 +27,7 @@ const Select = (props) => {
   );
 };
 
-Select.PropTypes = {
+Select.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.string).isRequired,
   setResponse: PropTypes.func.isRequired,
 };

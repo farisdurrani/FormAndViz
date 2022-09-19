@@ -39,7 +39,7 @@ const Checkbox = (props) => {
   );
 };
 
-Checkbox.PropTypes = {
+Checkbox.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.string).isRequired,
   response: PropTypes.array,
   setResponse: PropTypes.func.isRequired,
