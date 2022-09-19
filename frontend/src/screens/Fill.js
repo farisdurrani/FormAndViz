@@ -8,6 +8,7 @@ import { EMAIL_REGEX } from "../constants";
 import { addToResponses } from "../firebase";
 
 const Fill = (props) => {
+  const [submitted, setSubmitted] = useState(false);
   const questions = [
     {
       question: "Name*",
@@ -53,7 +54,7 @@ const Fill = (props) => {
     {
       question: "Do you have any dietary restrictions?*",
       type: "select",
-      entries: ["Vegan", "Vegetarian", "Halal", "Gluten-free"],
+      entries: ["Vegan", "Vegetarian", "Halal", "Gluten-free", "None"],
       responseState: useState(),
     },
     {
@@ -86,7 +87,20 @@ const Fill = (props) => {
       finalDataToPush[`entries${i}`] = e.entries || null;
     });
     addToResponses(finalDataToPush);
+
+    toast.success("Submitted!");
+    setSubmitted(true);
   };
+
+  if (submitted) {
+    return (
+      <div id="fill">
+        <p className="text-center mt-5">
+          You have successfully submitted the form!
+        </p>
+      </div>
+    );
+  }
 
   return (
     <Form id="fill">
