@@ -37,16 +37,12 @@ const Login = (props) => {
     if (isNewRegister) {
       const user = await registerWithEmail(email, password);
       if (user) {
-        toast.success(
-          `Registration of ${user.email} successful`
-        );
+        toast.success(`Registration of ${user.email} successful`);
       }
     } else {
       const user = await signInWithEmail(email, password);
       if (user) {
-        toast.success(
-          `Login with ${user.email} successful`
-        );
+        toast.success(`Login with ${user.email} successful`);
       }
     }
   };
@@ -57,6 +53,9 @@ const Login = (props) => {
       className="d-flex justify-content-center align-items-center"
     >
       <div className="login-container p-5">
+        <h1 className="mb-2">
+          Admin {isNewRegister ? "Registration" : "Login"}
+        </h1>
         <Form>
           {isNewRegister ? (
             <Form.Group className="mb-3" controlId="formName">
