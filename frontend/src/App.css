@@ -45,6 +45,15 @@ body {
   color: gray;
 }
 
+.btn-primary {
+  background-color: var(--secondary);
+}
+
+.invalid-entry {
+  border: 1px solid red;
+  background-color: lightpink;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	Navbar
 /* -------------------------------------------------------------------------- */
@@ -63,14 +72,9 @@ body {
   margin-inline: auto;
 }
 
-#fill .form-shortAns .error-msg {
+#fill .form-shortAns .validate-error-msg {
   color: red;
   font-size: small;
-}
-
-#fill .form-shortAns .invalid {
-  border: 1px solid red;
-  background-color: lightpink;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -85,4 +89,24 @@ body {
 #results .freeAnsRes .response {
   background-color: var(--tertiary);
   border-radius: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*	Results
+/* -------------------------------------------------------------------------- */
+
+#login {
+  height: calc(100vh - 56px);
+}
+
+#login .login-container {
+  background-color: var(--primary);
+  border-radius: 10px;
+  color: white;
+  width: min(750px, 90%);
+}
+
+#login .login-container .validate-error-msg {
+  color: red;
+  font-size: small;
 }

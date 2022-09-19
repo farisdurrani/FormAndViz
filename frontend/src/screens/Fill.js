@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { ResponseBox } from "../components/index.js";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
+import { EMAIL_REGEX } from "../constants";
 
 const Fill = (props) => {
   const questions = [
@@ -17,10 +18,7 @@ const Fill = (props) => {
       question: "Email",
       type: "shortAns",
       responseState: useState(),
-      validateFunction: (e) =>
-        e.match(
-          /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-        ),
+      validateFunction: (e) => e.match(EMAIL_REGEX),
       validatedState: useState(true),
       validateMsg: "Invalid email format",
     },

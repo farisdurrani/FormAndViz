@@ -34,10 +34,10 @@ const ShortAns = (props) => {
       <Form.Control
         type="text"
         placeholder="Short answer here"
-        className={`${validated ? null : "invalid"}`}
+        className={`${validated ? null : "invalid-entry"}`}
         onBlur={handleOnBlur}
       />
-      {validated ? null : <p className="mt-2 ms-2 error-msg">{validateMsg}</p>}
+      {validated ? null : <p className="mt-2 ms-2 validate-error-msg">{validateMsg}</p>}
     </Form.Group>
   );
 };
