@@ -32,8 +32,8 @@ const MainNavbar = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/fill">Home</Nav.Link>
-            <Nav.Link href="/results">Link</Nav.Link>
+            <Nav.Link href="/fill">Fill Form</Nav.Link>
+            <Nav.Link href="/results">Results</Nav.Link>
             <Nav.Link
               onClick={() => {
                 user ? signOutUser() : null;
