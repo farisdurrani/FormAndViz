@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ResponseBoxData } from "../components/index";
 import { getAllResponses } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { toast } from "react-toastify";
 
-const Results = (props) => {
+const Results = () => {
   const auth = getAuth();
   const [data, setData] = useState([]);
   const [abort, setAbort] = useState(true);

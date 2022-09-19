@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import { ResponseBox } from "../components/index.js";
 import Form from "react-bootstrap/Form";
@@ -7,7 +6,7 @@ import { toast } from "react-toastify";
 import { EMAIL_REGEX } from "../constants";
 import { addToResponses } from "../firebase";
 
-const Fill = (props) => {
+const Fill = () => {
   const [submitted, setSubmitted] = useState(false);
   const questions = [
     {
@@ -128,7 +127,5 @@ const Fill = (props) => {
     </Form>
   );
 };
-
-Fill.propTypes = {};
 
 export default Fill;

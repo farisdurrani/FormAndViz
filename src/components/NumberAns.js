@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 
 const NumberAns = (props) => {
   const {
@@ -51,6 +51,13 @@ const NumberAns = (props) => {
   );
 };
 
-NumberAns.propTypes = {};
+NumberAns.PropTypes = {
+  setResponse: PropTypes.func.isRequired,
+  exclude: PropTypes.object,
+  validateFunction: PropTypes.func,
+  validateMsg: PropTypes.string,
+  validated: PropTypes.bool,
+  setValidated: PropTypes.func,
+};
 
 export default NumberAns;

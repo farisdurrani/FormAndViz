@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import Form from "react-bootstrap/Form";
 
 const Range = (props) => {
@@ -15,6 +15,9 @@ const Range = (props) => {
   );
 };
 
-Range.propTypes = {};
+Range.PropTypes = {
+  response: PropTypes.number.isRequired,
+  setResponse: PropTypes.func.isRequired,
+};
 
 export default Range;

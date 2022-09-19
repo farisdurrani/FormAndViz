@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { toast } from "react-toastify";
@@ -8,10 +7,9 @@ import { EMAIL_REGEX } from "../constants";
 import {
   signInWithEmail,
   registerWithEmail,
-  getCurrentlySignedInUser,
 } from "../firebase";
 
-const Login = (props) => {
+const Login = () => {
   const [isNewRegister, setIsNewRegister] = useState(false);
   const [email, setEmail] = useState();
   const [emailValidated, setEmailValidated] = useState(true);
@@ -117,7 +115,5 @@ const Login = (props) => {
     </Container>
   );
 };
-
-Login.propTypes = {};
 
 export default Login;

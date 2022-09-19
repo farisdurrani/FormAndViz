@@ -1,6 +1,6 @@
 import React, { useId } from "react";
-import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
+import PropTypes from "prop-types";
 
 const Select = (props) => {
   const { entries, setResponse } = props;
@@ -27,6 +27,9 @@ const Select = (props) => {
   );
 };
 
-Select.propTypes = {};
+Select.PropTypes = {
+  entries: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setResponse: PropTypes.func.isRequired,
+};
 
 export default Select;

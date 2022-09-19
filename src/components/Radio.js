@@ -1,13 +1,10 @@
 import React, { useState, useId, useEffect } from "react";
-import PropTypes from "prop-types";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ToggleButton from "react-bootstrap/ToggleButton";
 import Form from "react-bootstrap/Form";
 import { ShortAns } from "./index";
 import { OTHER_OPTION } from "../constants";
+import PropTypes from "prop-types";
 
 const Radio = (props) => {
   const genId = useId();
@@ -59,6 +56,9 @@ const Radio = (props) => {
   );
 };
 
-Radio.propTypes = {};
+Radio.PropTypes = {
+  entries: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setResponse: PropTypes.func.isRequired,
+};
 
 export default Radio;

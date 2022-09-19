@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { signOutUser } from "../firebase";
 import { toast } from "react-toastify";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
-const MainNavbar = (props) => {
+const MainNavbar = () => {
   const [user, setUser] = useState();
   const auth = getAuth();
   onAuthStateChanged(auth, (detected_user) => {
@@ -48,7 +46,5 @@ const MainNavbar = (props) => {
     </Navbar>
   );
 };
-
-MainNavbar.propTypes = {};
 
 export default MainNavbar;

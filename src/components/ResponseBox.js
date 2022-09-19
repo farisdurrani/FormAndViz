@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useId } from "react";
-import PropTypes from "prop-types";
 import {
   Radio,
   Checkbox,
@@ -10,6 +9,7 @@ import {
   Spacer,
   NumberAns,
 } from "./index";
+import PropTypes from "prop-types";
 
 const ResponseBox = (props) => {
   const {
@@ -67,6 +67,22 @@ const ResponseBox = (props) => {
   );
 };
 
-ResponseBox.propTypes = {};
+ResponseBox.PropTypes = {
+  setResponse: PropTypes.func.isRequired,
+  exclude: PropTypes.object,
+  validateFunction: PropTypes.func,
+  validateMsg: PropTypes.string,
+  validated: PropTypes.bool,
+  setValidated: PropTypes.func,
+  question: PropTypes.string.isRequired,
+  type: PropTypes.type.isRequired,
+  description: PropTypes.string,
+  entries: PropTypes.arrayOf(PropTypes.string),
+  response: PropTypes.oneOfType(
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.array
+  ),
+};
 
 export default ResponseBox;

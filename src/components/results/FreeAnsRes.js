@@ -14,6 +14,8 @@ const FreeAnsRes = (props) => {
   );
 };
 
-FreeAnsRes.propTypes = {};
+FreeAnsRes.PropTypes = {
+  responses: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default FreeAnsRes;

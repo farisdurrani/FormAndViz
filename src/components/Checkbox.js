@@ -1,6 +1,6 @@
-import React, { useState, useId, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useId } from "react";
 import Form from "react-bootstrap/Form";
+import PropTypes from "prop-types";
 
 const Checkbox = (props) => {
   const genId = useId();
@@ -39,6 +39,10 @@ const Checkbox = (props) => {
   );
 };
 
-Checkbox.propTypes = {};
+Checkbox.PropTypes = {
+  entries: PropTypes.arrayOf(PropTypes.string).isRequired,
+  response: PropTypes.array,
+  setResponse: PropTypes.func.isRequired,
+};
 
 export default Checkbox;

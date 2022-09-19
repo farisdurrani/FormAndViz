@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Plot from "react-plotly.js";
+import PropTypes from "prop-types";
 
 const CheckboxRes = (props) => {
   const { responses } = props;
@@ -39,6 +39,8 @@ const CheckboxRes = (props) => {
   );
 };
 
-CheckboxRes.propTypes = {};
+CheckboxRes.PropTypes = {
+  responses: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+};
 
 export default CheckboxRes;

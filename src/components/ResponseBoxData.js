@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useId } from "react";
-import PropTypes from "prop-types";
 import { FreeAnsRes, Spacer, RadioRes, NumberRes, CheckboxRes } from "./index";
+import PropTypes from "prop-types";
 
 const ResponseBoxData = (props) => {
   const { question, type, responses } = props;
@@ -28,6 +28,10 @@ const ResponseBoxData = (props) => {
   );
 };
 
-ResponseBoxData.propTypes = {};
+ResponseBoxData.PropTypes = {
+  question: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  responses: PropTypes.array.isRequired,
+};
 
 export default ResponseBoxData;

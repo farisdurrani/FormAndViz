@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Plot from "react-plotly.js";
+import PropTypes from "prop-types";
 
 const RadioRes = (props) => {
   const { responses } = props;
@@ -33,6 +33,8 @@ const RadioRes = (props) => {
   );
 };
 
-RadioRes.propTypes = {};
+RadioRes.PropTypes = {
+  responses: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default RadioRes;
