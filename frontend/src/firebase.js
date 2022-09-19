@@ -7,6 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { DEFAULT_FIRESTORE_COLLECTION } from "./constants";
+import { toast } from "react-toastify";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -45,30 +46,34 @@ export const getAllResponses = async () => {
   });
 };
 
-export const registerWithEmail = () => {
-  createUserWithEmailAndPassword(auth, email, password)
+export const registerWithEmail = async (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      const user = userCredential.user;
+      return userCredential.user;
     })
     .catch((error) => {
-      console.error(error);
+      toast.error(`Error in registering: ${JSON.stringify(error.code)}`);
     });
 };
 
-export const signInWithEmail = () => {
-  signInWithEmailAndPassword(auth, email, password)
+export const signInWithEmail = async (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      const user = userCredential.user;
+      return userCredential.user;
     })
     .catch((error) => {
-      console.error(error);
+      if (error.code == "auth/user-not-found") {
+        toast.error(`No user found`);
+      } else {
+        toast.error(`Error in logging in: ${JSON.stringify(error.code)}`);
+      }
     });
 };
 
 export const signOutUser = () => {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
+      console.log("Sign out successful");
     })
     .catch((error) => {
       console.error(error);
