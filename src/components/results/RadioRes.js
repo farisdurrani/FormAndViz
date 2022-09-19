@@ -34,7 +34,7 @@ const RadioRes = (props) => {
 };
 
 RadioRes.propTypes = {
-  responses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  responses: PropTypes.array.isRequired,
 };
 
 export default RadioRes;

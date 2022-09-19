@@ -41,7 +41,7 @@ const Checkbox = (props) => {
 
 Checkbox.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.string).isRequired,
-  response: PropTypes.array,
+  response: PropTypes.any,
   setResponse: PropTypes.func.isRequired,
 };
 

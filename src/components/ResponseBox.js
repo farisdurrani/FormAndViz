@@ -78,11 +78,11 @@ ResponseBox.propTypes = {
   type: PropTypes.string.isRequired,
   description: PropTypes.string,
   entries: PropTypes.arrayOf(PropTypes.string),
-  response: PropTypes.oneOfType(
+  response: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-    PropTypes.array
-  ),
+    PropTypes.array,
+  ]),
 };
 
 export default ResponseBox;

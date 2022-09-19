@@ -40,7 +40,7 @@ const CheckboxRes = (props) => {
 };
 
 CheckboxRes.propTypes = {
-  responses: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  responses: PropTypes.array.isRequired,
 };
 
 export default CheckboxRes;

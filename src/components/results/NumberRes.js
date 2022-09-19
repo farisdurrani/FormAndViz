@@ -27,7 +27,7 @@ const NumberRes = (props) => {
 };
 
 NumberRes.propTypes = {
-  responses: PropTypes.arrayOf(PropTypes.number).isRequired,
+  responses: PropTypes.array.isRequired,
 };
 
 export default NumberRes;
