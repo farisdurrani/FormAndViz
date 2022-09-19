@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
 
-const ShortAns = (props) => {
+const NumberAns = (props) => {
   const {
     setResponse,
     exclude = new Set(),
@@ -27,8 +27,13 @@ const ShortAns = (props) => {
       return;
     }
 
+    if (!isNaN) {
+      setValidated(false);
+      return;
+    }
+
     setValidated(true);
-    setResponse(val);
+    setResponse(Number(val));
   };
 
   return (
@@ -46,6 +51,6 @@ const ShortAns = (props) => {
   );
 };
 
-ShortAns.propTypes = {};
+NumberAns.propTypes = {};
 
-export default ShortAns;
+export default NumberAns;

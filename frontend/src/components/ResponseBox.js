@@ -8,6 +8,7 @@ import {
   Range,
   Select,
   Spacer,
+  NumberAns,
 } from "./index";
 
 const ResponseBox = (props) => {
@@ -45,6 +46,15 @@ const ResponseBox = (props) => {
     longAns: <LongAns setResponse={setResponse} />,
     range: <Range response={response} setResponse={setResponse} />,
     select: <Select entries={entries} setResponse={setResponse} />,
+    number: (
+      <NumberAns
+        setResponse={setResponse}
+        validateFunction={validateFunction}
+        validateMsg={validateMsg}
+        setValidated={setValidated}
+        validated={validated}
+      />
+    ),
   };
 
   return (

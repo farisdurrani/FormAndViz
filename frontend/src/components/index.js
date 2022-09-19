@@ -7,6 +7,7 @@ export { default as LongAns } from "./LongAns";
 export { default as Range } from "./Range";
 export { default as Select } from "./Select";
 export { default as Spacer } from "./Spacer";
+export { default as NumberAns } from "./NumberAns";
 
 export { default as ResponseBoxData } from "./ResponseBoxData";
 export { default as FreeAnsRes } from "./results/FreeAnsRes";

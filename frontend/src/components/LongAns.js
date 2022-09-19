@@ -6,7 +6,11 @@ const LongAns = (props) => {
   const { setResponse } = props;
   return (
     <Form.Group className="form-longAns mb-3">
-      <Form.Control as="textarea" rows={3} />
+      <Form.Control
+        as="textarea"
+        rows={3}
+        onBlur={(e) => setResponse(e.target.value)}
+      />
     </Form.Group>
   );
 };

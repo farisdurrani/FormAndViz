@@ -1,28 +1,20 @@
 import React, { useState, useId, useEffect } from "react";
 import PropTypes from "prop-types";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ToggleButton from "react-bootstrap/ToggleButton";
 import Form from "react-bootstrap/Form";
 
 const Checkbox = (props) => {
   const genId = useId();
-  const {
-    entries,
-    response = new Set(),
-    setResponse,
-  } = props;
+  const { entries, response = [], setResponse } = props;
 
   const handleOnChange = (e) => {
     const entrySelected = e.target.id.substring(genId.length);
     const curSelectections = response;
+    const index = curSelectections.indexOf(entrySelected);
 
-    if (curSelectections.has(entrySelected)) {
-      curSelectections.delete(entrySelected);
+    if (index > -1) {
+      curSelectections.splice(index, 1);
     } else {
-      curSelectections.add(entrySelected);
+      curSelectections.push(entrySelected);
     }
     setResponse(curSelectections);
   };
