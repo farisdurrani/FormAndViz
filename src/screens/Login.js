@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import { EMAIL_REGEX } from "../constants";
-import {
-  signInWithEmail,
-  registerWithEmail,
-} from "../firebase";
+import { signInWithEmail, registerWithEmail, getAllAdmins } from "../firebase";
 
 const Login = () => {
   const [isNewRegister, setIsNewRegister] = useState(false);
@@ -40,13 +37,13 @@ const Login = () => {
       const user = await registerWithEmail(email, password);
       if (user) {
         toast.success(`Registration of ${user.email} successful`);
-        window.location.replace("/results");
+        window.location.replace("/fill");
       }
     } else {
       const user = await signInWithEmail(email, password);
       if (user) {
         toast.success(`Login with ${user.email} successful`);
-        window.location.replace("/results");
+        window.location.replace("/fill");
       }
     }
   };
@@ -57,9 +54,7 @@ const Login = () => {
       className="d-flex justify-content-center align-items-center"
     >
       <div className="login-container p-5">
-        <h1 className="mb-2">
-          Admin {isNewRegister ? "Registration" : "Login"}
-        </h1>
+        <h1 className="mb-2">{isNewRegister ? "Registration" : "Login"}</h1>
         <Form>
           {isNewRegister ? (
             <Form.Group className="mb-3" controlId="formName">

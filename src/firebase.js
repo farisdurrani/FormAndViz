@@ -1,12 +1,21 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  serverTimestamp,
+} from "firebase/firestore";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { DEFAULT_FIRESTORE_COLLECTION } from "./constants";
+import {
+  ADMINS_FIRESTORE_COLLECTION,
+  DEFAULT_FIRESTORE_COLLECTION,
+} from "./constants";
 import { toast } from "react-toastify";
 
 // Your web app's Firebase configuration
@@ -48,6 +57,17 @@ export const getAllResponses = async () => {
   return queryResponse;
 };
 
+export const getAllAdmins = async () => {
+  const querySnapshot = await getDocs(
+    collection(db, ADMINS_FIRESTORE_COLLECTION)
+  );
+  const admins = [];
+  querySnapshot.forEach((doc) => {
+    admins.push(doc.data().email);
+  });
+  return admins;
+};
+
 export const registerWithEmail = async (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -85,4 +105,8 @@ export const signOutUser = () => {
 
 export const getCurrentlySignedInUser = () => {
   return auth.currentUser?.email;
+};
+
+export const getCurrentTimestamp = () => {
+  return serverTimestamp();
 };

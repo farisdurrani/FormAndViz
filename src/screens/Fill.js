@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { ResponseBox } from "../components/index.js";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
 import { EMAIL_REGEX } from "../constants";
-import { addToResponses } from "../firebase";
+import { addToResponses, getCurrentTimestamp } from "../firebase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Fill = () => {
+  const auth = getAuth();
   const [submitted, setSubmitted] = useState(false);
+  const [abort, setAbort] = useState(true);
+  const [user, setUser] = useState();
   const questions = [
     {
       question: "Name*",
@@ -85,11 +89,30 @@ const Fill = () => {
       finalDataToPush[`response${i}`] = e.responseState[0];
       finalDataToPush[`entries${i}`] = e.entries || null;
     });
+
+    finalDataToPush.createdAt = getCurrentTimestamp();
+    finalDataToPush.user_email = user.email;
+
     addToResponses(finalDataToPush);
 
     toast.success("Submitted!");
     setSubmitted(true);
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAbort(false);
+        setUser(user);
+      } else {
+        window.location.replace("/login");
+      }
+    });
+  });
+
+  if (abort) {
+    return <>Loading...</>;
+  }
 
   if (submitted) {
     return (
