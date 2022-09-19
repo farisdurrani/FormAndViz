@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const LongAns = (props) => {
   const { setResponse } = props;
@@ -17,6 +17,6 @@ const LongAns = (props) => {
 
 LongAns.PropTypes = {
   setResponse: PropTypes.func.isRequired,
-}
+};
 
 export default LongAns;

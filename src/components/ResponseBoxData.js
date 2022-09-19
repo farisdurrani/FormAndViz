@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useId } from "react";
+import React from "react";
 import { FreeAnsRes, Spacer, RadioRes, NumberRes, CheckboxRes } from "./index";
 import PropTypes from "prop-types";
 
