@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import { EMAIL_REGEX } from "../constants";
-import { signInWithEmail, registerWithEmail, getAllAdmins } from "../firebase";
+import { signInWithEmail, registerWithEmail } from "../firebase";
 
 const Login = () => {
   const [isNewRegister, setIsNewRegister] = useState(false);

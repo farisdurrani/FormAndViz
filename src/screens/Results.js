@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { ResponseBoxData } from "../components/index";
 import { getAllResponses, getAllAdmins } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { toast } from "react-toastify";
 
 const Results = () => {
   const auth = getAuth();
@@ -11,10 +10,6 @@ const Results = () => {
   const [permission, setPermission] = useState(2);
 
   useEffect(() => {
-    const getAdmins = async () => {
-      return await getAllAdmins();
-    };
-
     const loadData = async () => {
       const new_data = await getAllResponses();
       setData(new_data);
