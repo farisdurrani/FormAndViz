@@ -1,7 +1,17 @@
 # FormAndViz
+
 A simple form submission and a summary statistics of the form responses.
 
-Author: Faris Durrani
+> Author: Faris Durrani </br>
+> GitHub Repo: https://github.com/farisdurrani/FormAndViz
+
+## Architecture
+
+Frontend - ReactJS </br>
+Backend - NodeJS, Firebase Authentication </br>
+Database - Firebase NoSQL Firestore Database
+
+
 
 ## Project Requirements
 
