@@ -2,8 +2,12 @@
 
 A simple form submission and a summary statistics of the form responses.
 
-> Author: Faris Durrani </br>
-> GitHub Repo: https://github.com/farisdurrani/FormAndViz
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c54ad53b-a05c-461f-a5e3-f749f8390ce4/deploy-status)](https://app.netlify.com/sites/form-and-viz/deploys)
+[![React Build Check](https://github.com/farisdurrani/FormAndViz/actions/workflows/node.js.yml/badge.svg)](https://github.com/farisdurrani/FormAndViz/actions/workflows/node.js.yml)
+
+> Author: [Faris Durrani](https://github.com/farisdurrani) </br>
+> GitHub Repo: https://github.com/farisdurrani/FormAndViz <br/>
+> Deployed Site: https://form-and-viz.netlify.app
 
 # How to Run
 
@@ -23,6 +27,16 @@ To access the /results page, you must login as an admin, i.e.,
 - Email: a@gmail.com
 - Password: 123456
 
+# Screenshots
+Screenshot of login page
+![](.github/readme_assets/login.jpg)
+Screenshot of form fill page
+![](.github/readme_assets/fill.jpg)
+Screenshot of form results page (discrete data)
+![](.github/readme_assets/results.jpg)
+Screenshot of form fill page (data visualized)
+![](.github/readme_assets/results2.jpg)
+
 # Architecture
 
 Frontend - ReactJS </br>
@@ -32,6 +46,11 @@ Database - Firebase NoSQL Firestore Database
 ```
 📦FormAndViz
  ┣ 📂.github
+ ┃ ┣ 📂readme_assets
+ ┃ ┃ ┗ 📜fill.jpg - Screenshot of form fill page
+ ┃ ┃ ┗ 📜login.jpg - Screenshot of login page
+ ┃ ┃ ┗ 📜results.jpg - Screenshot of form results page (discrete data)
+ ┃ ┃ ┗ 📜results2.jpg - Screenshot of form fill page (data visualized)
  ┃ ┣ 📂workflows
  ┃ ┃ ┗ 📜node.js.yml - Build Check on GitHub Actions CI/CD
  ┃ ┣ 📜CODEOWNERS - Codeowners of this repo
